@@ -1,323 +1,1780 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<title>Portfolio</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Rahul Shridhar.V | Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:title" content="Rahul Shridhar.V - Software Developer" />
+  <meta property="og:description" content="Portfolio of Rahul Shridhar.V - Software Developer and Computer Science Engineer" />
+  <meta name="theme-color" content="#343a40">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-	<meta property="og:title" content="Page Tile" />
-	<meta property="og:description" content="Personal Site" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
-	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-	<link rel="stylesheet" href="css/animate.css">
+  <style>
+    :root {
+      --primary-color: #007bff;
+      --secondary-color: #6c757d;
+      --dark-color: #343a40;
+      --light-color: #f8f9fa;
+      --success-color: #28a745;
+      --transition: all 0.3s ease;
+    }
 
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<link rel="stylesheet" href="css/aos.css">
-	<link rel="stylesheet" href="css/flaticon.css">
-	<link rel="stylesheet" href="css/icomoon.css">
-	<link rel="stylesheet" href="css/style.css">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      overflow-x: hidden;
+      background-color: #f9f9f9;
+      position: relative;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 10px;
+    }
+
+    /* Navbar */
+    .navbar {
+      transition: var(--transition);
+      padding: 15px 0;
+    }
+
+    .navbar.scrolled {
+      padding: 8px 0;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      background-color: rgba(33, 37, 41, 0.98) !important;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: white !important;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      margin: 0 10px;
+      position: relative;
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .nav-link:after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary-color);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover:after, .nav-link.active:after {
+      width: 100%;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: white !important;
+    }
+
+    /* Hero Section */
+    .hero-wrap {
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background-color: var(--dark-color);
+      overflow: hidden;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-content .subheading {
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--primary-color);
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #ffffff, #007bff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-content h2 {
+      font-size: 1.8rem;
+      font-weight: 300;
+      margin-bottom: 30px;
+    }
+
+    .txt-rotate {
+      color: var(--primary-color);
+      font-weight: 500;
+    }
+
+    .hero-buttons {
+      margin-top: 30px;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      border: none;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: var(--transition);
+      margin-left: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn-primary:hover {
+      background-color: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color) !important; /* Ensure text color changes on hover */
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+    }
+     .btn-primary:hover a {
+        color: var(--primary-color) !important;
+     }
+
+
+    .btn-outline:hover {
+      background-color: var(--primary-color);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+    }
+
+    /* Scroll Down Animation */
+    .scroll-down {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 3;
+    }
+
+    .chevron {
+      width: 30px;
+      height: 8px;
+      opacity: 0;
+      transform: scale(0.3);
+      animation: move-chevron 3s ease-out infinite;
+    }
+
+    .chevron:first-child {
+      animation-delay: 0s;
+    }
+
+    .chevron:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    .chevron:nth-child(3) {
+      animation-delay: 1s;
+    }
+
+    .chevron:before, .chevron:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 50%;
+      background: var(--primary-color);
+    }
+
+    .chevron:before {
+      left: 0;
+      transform: skewY(30deg);
+    }
+
+    .chevron:after {
+      right: 0;
+      transform: skewY(-30deg);
+    }
+
+    @keyframes move-chevron {
+      25% {
+        opacity: 1;
+      }
+      33.3% {
+        opacity: 1;
+        transform: translateY(30px);
+      }
+      66.6% {
+        opacity: 1;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(70px) scale(0.3);
+      }
+    }
+
+    /* Section Styling */
+    section {
+      padding: 100px 0;
+      overflow: hidden; /* To contain AOS animations */
+    }
+
+    .section-heading {
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-heading h2:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -15px;
+      width: 80px;
+      height: 3px;
+      background: var(--primary-color);
+      transform: translateX(-50%);
+    }
+
+    /* About Section */
+    .about-section {
+      background-color: white;
+    }
+
+    .profile-img {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      max-width: 350px; /* Control image size */
+      margin: 0 auto; /* Center image if col is wider */
+    }
+
+    .profile-img img {
+      width: 100%;
+      border-radius: 20px;
+      transition: var(--transition);
+    }
+
+    .profile-img:hover img {
+      transform: scale(1.05);
+    }
+
+    .about-info h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .about-info p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .about-info .info-item {
+      margin-bottom: 15px;
+      font-size: 1rem; /* Ensure readability */
+    }
+
+    .about-info .info-item strong { /* Use strong for labels */
+      color: var(--dark-color); /* Make labels slightly darker */
+      min-width: 120px;
+      display: inline-block;
+      font-weight: 600;
+    }
+     body.dark-mode .about-info .info-item strong {
+        color: var(--light-color);
+     }
+
+
+    /* Education Section */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 3px;
+      background-color: var(--primary-color);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1.5px;
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 10px 40px;
+      box-sizing: border-box;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+
+    .timeline-content {
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .timeline-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: -10px;
+      width: 20px;
+      height: 20px;
+      background-color: white; /* Default to white */
+      transform: rotate(45deg);
+      z-index: -1; /* Ensure it's behind content */
+    }
+
+    .timeline-item:nth-child(even) .timeline-content::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: -10px;
+      width: 20px;
+      height: 20px;
+      background-color: white; /* Default to white */
+      transform: rotate(45deg);
+      z-index: -1; /* Ensure it's behind content */
+    }
+
+
+    .timeline-icon {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+      top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      z-index: 1;
+      font-size: 1.2rem; /* Icon size */
+    }
+
+    .timeline-item:nth-child(odd) .timeline-icon {
+      right: -20px; /* Adjusted for icon size */
+    }
+
+    .timeline-item:nth-child(even) .timeline-icon {
+      left: -20px; /* Adjusted for icon size */
+    }
+
+    .timeline-content h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--dark-color);
+    }
+
+    .timeline-content .position {
+      display: block;
+      font-weight: 500;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+     .timeline-content p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom:0;
+     }
+
+    .timeline-content .date {
+      position: absolute;
+      top: -30px;
+      font-size: 0.9rem;
+      color: var(--secondary-color);
+      font-weight: 500;
+      background-color: #f9f9f9; /* Match body bg for light mode */
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    body.dark-mode .timeline-content .date {
+        background-color: #121212; /* Match body bg for dark mode */
+        color: var(--light-color);
+    }
+
+
+    .timeline-item:nth-child(odd) .timeline-content .date {
+      right: 0;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content .date {
+      left: 0;
+    }
+
+    /* Skills Section */
+    .skills-section {
+      background-color: #f9f9f9;
+    }
+
+    .skill-category {
+      margin-bottom: 40px;
+    }
+
+    .skill-category h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .skill-item {
+      margin-bottom: 25px;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .skill-info h4 {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .skill-info span {
+      font-size: 0.9rem;
+      color: var(--secondary-color);
+    }
+
+    .skill-bar {
+      height: 10px;
+      background-color: #e9ecef;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background-color: var(--primary-color);
+      border-radius: 5px;
+      position: relative;
+      width: 0; /* Initial width for animation */
+      transition: width 1s ease-in-out;
+    }
+
+    /* Projects Section */
+    .project-card {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      background-color: white;
+      transition: var(--transition);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-img {
+      position: relative;
+      overflow: hidden;
+      height: 250px; /* Fixed height for image container */
+    }
+
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures image covers the area, might crop */
+      transition: var(--transition);
+    }
+
+    .project-card:hover .project-img img {
+      transform: scale(1.1);
+    }
+
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 123, 255, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+
+    .project-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background-color: white;
+      border-radius: 50%;
+      margin: 0 5px;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .project-links a:hover {
+      background-color: var(--dark-color);
+      color: white;
+    }
+
+    .project-content {
+      padding: 25px;
+      flex-grow: 1; /* Allows content to fill space */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    .project-content p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        flex-grow: 1;
+    }
+
+    .project-tags {
+      margin-bottom: 15px;
+      margin-top: auto; /* Pushes tags to the bottom if content is short */
+    }
+
+    .project-tag {
+      display: inline-block;
+      background-color: rgba(0, 123, 255, 0.1);
+      color: var(--primary-color);
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+    body.dark-mode .project-tag {
+        background-color: rgba(0, 123, 255, 0.2);
+        color: #6cacff;
+    }
+
+
+    /* Resume Section */
+    .resume-section {
+      background-color: white;
+    }
+
+    .resume-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center; /* Center the download button */
+    }
+    .resume-container p {
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+    }
+
+    .resume-embed {
+      width: 100%;
+      height: 800px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Contact Section */
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+
+    .contact-info-icon {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(0, 123, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      margin-right: 20px;
+      flex-shrink: 0; /* Prevent icon from shrinking */
+    }
+    body.dark-mode .contact-info-icon {
+        background-color: rgba(0, 123, 255, 0.2);
+    }
+
+
+    .contact-info-content h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 5px; /* Reduced margin */
+    }
+
+    .contact-info-content p, .contact-info-content a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 0.95rem; /* Slightly smaller for better fit */
+      word-break: break-word; /* Break long emails/links */
+    }
+     body.dark-mode .contact-info-content p, body.dark-mode .contact-info-content a {
+        color: #a0a0a0;
+     }
+
+
+    .contact-info-content a:hover {
+      color: var(--primary-color);
+    }
+
+    .contact-form .form-control {
+      height: 55px;
+      border-radius: 5px;
+      border: 1px solid #ced4da;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .contact-form textarea.form-control {
+      height: 180px;
+      resize: none;
+    }
+
+    .contact-form .form-control:focus {
+      box-shadow: none;
+      border-color: var(--primary-color);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark-color);
+      color: rgba(255,255,255,0.7); /* Lighter text for footer */
+      padding: 40px 0; /* Increased padding */
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-text p {
+      margin-bottom: 0;
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+    }
+
+    .footer-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      margin-left: 10px;
+      color: white;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 9999;
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background-color: var(--dark-color);
+    }
+
+    /* Theme Switcher */
+    .theme-switch {
+      position: fixed;
+      top: 50%;
+      right: 30px;
+      transform: translateY(-50%);
+      z-index: 999;
+    }
+
+    .theme-switch-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: white;
+      color: var(--dark-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+    }
+
+    .theme-switch-btn:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+     body.dark-mode .theme-switch-btn {
+        background-color: #222;
+        color: var(--light-color);
+     }
+     body.dark-mode .theme-switch-btn:hover {
+        background-color: var(--primary-color);
+        color: white;
+     }
+
+
+    /* Loader */
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--dark-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999; /* Ensure it's on top of everything */
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .loader.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top: 4px solid var(--primary-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+
+    body.dark-mode .navbar.scrolled {
+        background-color: rgba(18, 18, 18, 0.98) !important; /* Darker for dark mode */
+    }
+
+    body.dark-mode .about-section,
+    body.dark-mode .resume-section {
+      background-color: #181818;
+    }
+
+    body.dark-mode .skills-section {
+      background-color: #121212; /* Match body background */
+    }
+
+    body.dark-mode .timeline-content,
+    body.dark-mode .project-card {
+      background-color: #222222;
+      /* color: #f1f1f1; Ensure text color is light */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Darker shadow */
+    }
+
+
+    body.dark-mode .timeline-item:nth-child(odd) .timeline-content::after,
+    body.dark-mode .timeline-item:nth-child(even) .timeline-content::after {
+      background-color: #222222; /* Match timeline content background */
+    }
+
+    body.dark-mode .timeline-content h3,
+    body.dark-mode .project-content h3,
+    body.dark-mode .skill-category h3,
+    body.dark-mode .section-heading h2,
+    body.dark-mode .about-info h3 {
+      color: #f1f1f1; /* Ensure headings are light */
+    }
+
+    body.dark-mode .contact-form .form-control {
+      background-color: #222222;
+      border-color: #333333;
+      color: #f1f1f1;
+    }
+     body.dark-mode .contact-form .form-control::placeholder {
+        color: #6c757d; /* Lighter placeholder for dark mode */
+     }
+
+     body.dark-mode ::-webkit-scrollbar-track {
+      background: #222;
+    }
+    body.dark-mode ::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+    }
+
+
+    /* Responsive Styles */
+    @media (max-width: 991px) {
+      .hero-content h1 {
+        font-size: 2.8rem; /* Adjusted */
+      }
+      .hero-content h2 {
+        font-size: 1.4rem; /* Adjusted */
+      }
+      section {
+        padding: 80px 0;
+      }
+      .timeline::after {
+        left: 20px; /* Adjusted for icon size */
+        margin-left:0;
+      }
+      .timeline-item {
+        width: 100%;
+        padding-left: 60px; /* Space for icon + arrow */
+        padding-right: 15px;
+      }
+      .timeline-item:nth-child(even) {
+        left: 0; /* Reset for single column */
+      }
+      .timeline-item:nth-child(odd) .timeline-content::after,
+      .timeline-item:nth-child(even) .timeline-content::after {
+        left: -10px; /* Pointing left for all items */
+        top: 20px;
+         right: auto;
+      }
+      .timeline-icon {
+        left: 0px; /* Position icon on the timeline bar */
+         width: 30px; /* Smaller icon */
+         height: 30px;
+         font-size: 1rem;
+      }
+      .timeline-item:nth-child(odd) .timeline-icon,
+      .timeline-item:nth-child(even) .timeline-icon {
+          left: 5px; /* Align with timeline line */
+          right:auto;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content .date,
+      .timeline-item:nth-child(even) .timeline-content .date {
+        left: auto;
+        right: 0; /* Dates to the right for consistency */
+        top: 5px; /* Adjust position relative to content */
+        position: relative; /* Make it part of flow */
+        display: block;
+        text-align: right;
+        margin-bottom: 5px; /* Space below date */
+        background: none; padding: 0; /* Remove background on mobile for date */
+      }
+       .contact-form {
+         margin-top: 40px;
+       }
+    }
+
+    @media (max-width: 767px) {
+      .navbar-nav {
+        background-color: rgba(33, 37, 41, 0.98); /* Add background to collapsed nav */
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+      .nav-link {
+        margin: 5px 0;
+        padding: 5px 0;
+      }
+      .nav-link:after {
+        display: none; /* Remove underline for collapsed nav items */
+      }
+      .hero-content h1 {
+        font-size: 2.2rem; /* Further adjust */
+      }
+      .hero-content h2 {
+        font-size: 1.2rem; /* Further adjust */
+      }
+      .hero-buttons .btn-outline {
+        margin-left: 0;
+        margin-top: 15px;
+      }
+      section {
+        padding: 60px 0;
+      }
+      .section-heading h2 {
+        font-size: 2rem;
+      }
+      .about-info h3 {
+        font-size: 1.5rem;
+      }
+      .contact-info-item {
+        margin-bottom: 20px;
+      }
+      .profile-img {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-content h2 {
+        font-size: 1.1rem;
+      }
+      .hero-buttons {
+        display: flex;
+        flex-direction: column;
+      }
+      .hero-buttons .btn-primary,
+      .hero-buttons .btn-outline {
+        width: 100%;
+        margin: 5px 0;
+      }
+      .section-heading h2 {
+        font-size: 1.8rem;
+      }
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-links {
+        margin-top: 20px;
+        justify-content: center;
+      }
+      .theme-switch {
+        display: none; /* Hide theme switch on very small screens, or reposition */
+      }
+      .back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
+       .timeline-item {
+        padding-left: 50px; /* Adjust padding for smaller icons */
+      }
+       .timeline-icon {
+         width: 25px;
+         height: 25px;
+         font-size: 0.9rem;
+         left: 0px;
+      }
+       .timeline-item:nth-child(odd) .timeline-icon,
+      .timeline-item:nth-child(even) .timeline-icon {
+          left: 12px; /* Align with timeline line */
+      }
+      .timeline::after {
+        left: 24px;
+      }
+
+    }
+  </style>
 </head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="90">
 
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  <div class="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <div class="theme-switch">
+    <div class="theme-switch-btn" id="theme-toggle">
+      <i class="fas fa-moon"></i>
+    </div>
+  </div>
+
+  <a href="#home" class="back-to-top" id="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Rahul Shridhar.V</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#resume">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="hero-wrap">
+    <div id="particles-js"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center justify-content-center">
+        <div class="col-lg-10 col-md-12 text-center hero-content" data-aos="fade-up" data-aos-duration="1000">
+          <span class="subheading">HELLO! I AM</span>
+          <h1>Rahul Shridhar.V</h1>
+          <h2>I'm a <span class="txt-rotate" data-period="2000" data-rotate='[ "Software Developer.", "Web Designer.", "Tech Enthusiast.", "Problem Solver." ]'></span></h2>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Hire Me</a>
+            <a href="#projects" class="btn btn-outline">My Works</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-down">
+      <div class="chevron"></div>
+      <div class="chevron"></div>
+      <div class="chevron"></div>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="section-heading" data-aos="fade-up">
+        <h2>About Me</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 d-flex justify-content-center align-items-start" data-aos="fade-right" data-aos-delay="100">
+          <div class="profile-img">
+            <img src="images\WhatsApp Image 2025-05-02 at 21.03.18_332db724.jpg" alt="Rahul Shridhar.V">
+          </div>
+        </div>
+        <div class="col-lg-8 ps-lg-5" data-aos="fade-left" data-aos-delay="200">
+          <div class="about-info">
+            <h3>Software Developer & Computer Science Engineer</h3>
+            <p>
+              Hello! I'm Rahul Shridhar.V, a passionate and dedicated software developer with a strong foundation in computer science principles. I specialize in creating dynamic and responsive web applications and I'm always eager to learn new technologies and take on challenging projects.
+            </p>
+            <div class="row mt-2 mb-4">
+              <div class="col-md-6">
+                <div class="info-item"><strong>Name:</strong> Rahul Shridhar.V</div>
+                <div class="info-item"><strong>Email:</strong>rahulshridharvijayakumar@gmail.com</div>
+                 <div class="info-item"><strong>Phone:</strong> +91-9445104761</div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-item"><strong>Location:</strong> Hyderabad, India</div>
+                <div class="info-item"><strong>Freelance:</strong> Available</div>
+                <div class="info-item"><strong>Degree:</strong>B.Tech Computer Science and Engineering</div>
+              </div>
+            </div>
+            <p>
+              My goal is to leverage my skills to build innovative solutions that make a difference. I am a team player with excellent communication skills, and I am confident in my ability to contribute effectively to any project.
+            </p>
+            <a href="#resume" class="btn btn-primary mt-3">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="education-section">
+    <div class="container">
+      <div class="section-heading" data-aos="fade-up">
+        <h2>Education & Experience</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+          <div class="timeline-content">
+            <span class="date">2025 - Present</span>
+            <h3>Software Developer</h3>
+            <span class="position">Valuelabs, Hyderabad</span>
+            <p>Developing and maintaining web applications using modern frameworks. Collaborating with cross-functional teams to deliver high-quality software products.</p>
+          </div>
+        </div>
+        <!-- <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="timeline-content">
+            <span class="date">2020 - 2023</span>
+            <h3>Master of Computer Applications (MCA)</h3>
+            <span class="position">XYZ University, Bengaluru</span>
+            <p>Focused on advanced software development, database management, and artificial intelligence. Completed a thesis on machine learning applications.</p>
+          </div>
+        </div> -->
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+          <div class="timeline-content">
+            <span class="date">2023</span>
+            <h3>Research Intern</h3>
+            <span class="position">National Institute of Technology, Trichy</span>
+            <p> Collaborated with a multidisciplinary team at NIT Trichy as a project intern, contributing to the 
+development and optimization of Convolutional Neural Network(CNN) models, specifically YOLO 
+(You Only Look Once), for object detection</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="timeline-content">
+            <span class="date">2021- 2025</span>
+            <h3>Bachelor of Computer Science and Engineering(B.Tech CSE)</h3>
+            <span class="position">SASTRA DEEMED UNIVERSITY, THANJAVUR</span>
+            <p>Acquired a strong understanding of fundamental computer science concepts, algorithms, and data structures.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <div class="section-heading" data-aos="fade-up">
+        <h2>My Skills</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6 skill-category" data-aos="fade-right">
+          <h3>Programming Languages</h3>
+          <div class="skill-item">
+            <div class="skill-info"><h4>Java</h4><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><h4>Python</h4><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><h4>C</h4><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
+          </div>
+           <div class="skill-item">
+            <div class="skill-info"><h4>C++</h4><span>75%</span></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="75%"></div></div>
+          </div>
+        </div>
+        <div class="col-md-6 skill-category" data-aos="fade-left">
+          <h3>Frameworks & Libraries</h3>
+          <div class="skill-item">
+            <div class="skill-info"><h4>Spring Boot</h4><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><h4>React.js</h4><span>78%</span></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="78%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><h4>Node.js</h4><span>70%</span></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><h4>Django</h4><span>95%</span></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div>
+          </div>
+        </div>
+        <div class="col-md-6 skill-category" data-aos="fade-right" data-aos-delay="100">
+          <h3>Databases</h3>
+          <div class="skill-item">
+            <div class="skill-info"><h4>MySQL</h4><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><h4>MongoDB</h4><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
+          </div>
+           <div class="skill-item">
+            <div class="skill-info"><h4>PostgreSQL</h4><span>70%</span></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div>
+          </div>
+        </div>
+        <div class="col-md-6 skill-category" data-aos="fade-left" data-aos-delay="100">
+          <h3>Tools & Others</h3>
+          <div class="skill-item">
+            <div class="skill-info"><h4>Git & GitHub</h4><span>95%</span></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><h4>Docker</h4><span>70%</span></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-info"><h4>REST APIs</h4><span>88%</span></div>
+            <div class="skill-bar"><div class="skill-progress" data-width="88%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <div class="section-heading" data-aos="fade-up">
+        <h2>My Projects</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-card">
+            <div class="project-img">
+              <img src="images\eCommerce_Platform.png" alt="Project Alpha">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                  <a href="#" target="_blank" title="Live Demo"><i class="fas fa-link"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>E-commerce Platform</h3>
+              <p>A full-featured e-commerce website with product listings, user accounts, shopping cart, and payment integration.</p>
+              <div class="project-tags">
+                <span class="project-tag">Java</span><span class="project-tag">Spring Boot</span><span class="project-tag">React</span><span class="project-tag">MySQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-card">
+            <div class="project-img">
+              <img src="images\onchain.png" alt="Project Beta">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                  <a href="#" target="_blank" title="Live Demo"><i class="fas fa-link"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>On-Chain Analysis based abnormal transaction detection on cryptocurrency exchanges</h3>
+              <p>Led development of advanced anomaly detection system for cryptocurrency exchanges, leveraging LSTM with attention 
+mechanism for on-chain analysis. Achieved detection of abnormal transaction amounts, enhancing exchange security and risk 
+management.</p>
+              <div class="project-tags">
+                <span class="project-tag">Python</span><span class="project-tag">pandas</span><span class="project-tag">Deep Learning</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-card">
+            <div class="project-img">
+              <img src="images\student-management-system.png" alt="Project Gamma">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                  <a href="#" target="_blank" title="Live Demo"><i class="fas fa-link"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Student Management System</h3>
+              <p>This system helps manage student data, track attendance, and maintain records, making it ideal for educational institutions.</p>
+              <div class="project-tags">
+                <span class="project-tag">HTML5</span><span class="project-tag">CSS3</span><span class="project-tag">JavaScript</span><span class="project-tag">Django</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume" class="resume-section">
+    <div class="container">
+      <div class="section-heading" data-aos="fade-up">
+        <h2>My Resume</h2>
+      </div>
+      <div class="resume-container" data-aos="fade-up" data-aos-delay="100">
+        <p>You can view or download my resume by clicking the button below. It contains a more detailed overview of my qualifications and experience.</p>
+        <a href="CV_RahulShridhar.pdf" class="btn btn-primary btn-lg" download="Rahul_Shridhar_V_Resume.pdf">
+          <i class="fas fa-download me-2"></i>Download Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+  <div class="container">
+    <div class="section-heading" data-aos="fade-up">
+      <h2>Get In Touch</h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-5" data-aos="fade-right">
+        <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-info-content">
+              <h4>Location</h4>
+              <p>Hyderabad, India</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-info-content">
+              <h4>Email</h4>
+              <p><a href="mailto:rahul.shridhar.v@example.com">rahulshridharvijayakumar@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
+            <div class="contact-info-content">
+              <h4>Phone</h4>
+              <p><a href="tel:+919876543210">+91 9445104761</a></p>
+            </div>
+          </div>
+           <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fab fa-linkedin"></i></div>
+            <div class="contact-info-content">
+              <h4>LinkedIn</h4>
+              <p><a href="https://www.linkedin.com/in/rahul-shridhar-664742269/" target="_blank">linkedin.com/in/rahul-shridhar</a></p>
+            </div>
+          </div>
+      </div>
+      <div class="col-lg-7" data-aos="fade-left" data-aos-delay="100">
+        <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT_ID" method="POST" class="contact-form">
+          <div class="row">
+            <div class="col-md-6">
+              <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+            </div>
+          </div>
+          <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+          <textarea class="form-control" name="message" rows="6" placeholder="Your Message" required></textarea>
+          <input type="hidden" name="_replyto" value=""> <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-text">
+          <p>&copy; <span id="currentYear"></span> Rahul Shridhar.V. All rights reserved. Designed with <i class="fas fa-heart text-danger"></i>.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/RahulShridhar10" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/rahul-shridhar-664742269/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+
+          </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Preloader
+      const loader = document.querySelector('.loader');
+      window.addEventListener('load', () => {
+        setTimeout(() => { // Ensure everything is loaded
+            loader.classList.add('fade-out');
+        }, 500); // Small delay to prevent flicker
+      });
+
+      // AOS Initialization
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
+
+      // Navbar Scroll Effect
+      const navbar = document.getElementById('navbar');
+      if (navbar) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+      }
+
+      // Back to Top Button
+      const backToTopButton = document.getElementById('back-to-top');
+      if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+            backToTopButton.classList.add('active');
+          } else {
+            backToTopButton.classList.remove('active');
+          }
+        });
+        backToTopButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // Theme Toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      const body = document.body;
+      const themeIcon = themeToggle.querySelector('i');
+
+      const currentTheme = localStorage.getItem('theme');
+      if (currentTheme) {
+        body.classList.add('dark-mode');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      } else { // Default to light if no preference or if preference is light
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+      }
 
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light site-navbar-target"
-		id="ftco-navbar">
-		<div class="container">
-			<a class="navbar-brand" href="index.html">Rahul Shridhar.V</a>
-			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
-				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
-			</button>
-
-			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav nav ml-auto">
-					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-					<li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-					<li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-					<li class="nav-item"><a href="#footer-section" class="nav-link"><span>Contact</span></a></li>
+      themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) {
+          localStorage.setItem('theme', 'dark');
+          themeIcon.classList.remove('fa-moon');
+          themeIcon.classList.add('fa-sun');
+        } else {
+          localStorage.removeItem('theme');
+          themeIcon.classList.remove('fa-sun');
+          themeIcon.classList.add('fa-moon');
+        }
+      });
 
 
-				</ul>
-			</div>
-		</div>
-	</nav>
+      // Text Rotation for Hero Section
+      const TxtRotate = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+      };
+
+      TxtRotate.prototype.tick = function() {
+        const i = this.loopNum % this.toRotate.length;
+        const fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+        const that = this;
+        let delta = 200 - Math.random() * 100;
+        if (this.isDeleting) { delta /= 2; }
+        if (!this.isDeleting && this.txt === fullTxt) {
+          delta = this.period;
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+          this.isDeleting = false;
+          this.loopNum++;
+          delta = 500;
+        }
+        setTimeout(function() { that.tick(); }, delta);
+      };
+
+      const elements = document.getElementsByClassName('txt-rotate');
+      for (let i=0; i<elements.length; i++) {
+        const toRotate = elements[i].getAttribute('data-rotate');
+        const period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+          new TxtRotate(elements[i], JSON.parse(toRotate), period);
+        }
+      }
+      // CSS trick to inject the caret:
+      const css = document.createElement("style");
+      css.type = "text/css";
+      css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid var(--primary-color) }";
+      document.body.appendChild(css);
 
 
-	<!-- particles -->
-	<div id="particles-js"></div>
-
-	<section class="hero-wrap js-fullheight">
-		<!--       <div class="overlay"></div> -->
-		<div class="container">
-			<div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
-				<div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
-					<div class="text text-center">
-						<span class="subheading">Hey! I am</span>
-						<h1>Rahul Shridhar.V</h1>
-						<h2>I like
-							<span class="txt-rotate" data-period="2000"
-								data-rotate='[ "Coding.", "Software Development", "Problem Solving."]'></span>
-						</h2>
-					</div>
-				</div>
-			</div>
-			<div class="scrollDown">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-		</div>
-		</div>
-		</button>
-		<div class="glyphicon glyphicon-arrow-down"></div>
-	</section>
-
-	<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
-		<div class="container">
-			<div class="row d-flex no-gutters">
-				<div class="col-md-6 col-lg-6 d-flex">
-
-					</div>
-				</div>
-				
-	</section>
-
-	<section class="ftco-section ftco-no-pb goto-here" id="about-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
-					<nav id="navi">
-						<ul>
-							<li><a href="#page-1">Education</a></li>
-							<li><a href="#page-2">Skills</a></li>
-						</ul>
-					</nav>
-				</div>
-				<div class="col-md-9">
-					<div id="page-1" class="page one">
-						<h2 class="heading">Education</h2>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-graduation-cap"></span>
-							</div>
-							<div class="text pl-3">
-								<h2>Sastra Deemed University</h2>
-								<span class="position">Bachelor of Engineering</span>
-								<p><strong>Computer Science Engineering</strong></p>
-								<p>Tamil Nadu - India</p>
-								<span class="date">2021-2025</span>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-book"></span>
-							</div>
-							<div class="text pl-3">
-								<h2>Chellamal Matriculation Higher Secondary School</h2>
-								<span class="position">HSLC</span>
-								<p>Tamil Nadu - India</p>
-								<span class="date">2021</span>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-book"></span>
-							</div>
-							<div class="text pl-3">
-								<h2>RSK Higher Secondary School</h2>
-								<span class="position">SSLC</span>
-								<p>Tamil Nadu - India</p>
-								<span class="date">2019</span>
-							</div>
-						</div>
-					</div>
+      // Particles.js Initialization
+      if (document.getElementById('particles-js')) {
+        particlesJS("particles-js", {
+          "particles": {
+            "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+            "color": { "value": "#007bff" }, // Primary color
+            "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" }, "polygon": { "nb_sides": 5 } },
+            "opacity": { "value": 0.5, "random": false, "anim": { "enable": false, "speed": 1, "opacity_min": 0.1, "sync": false } },
+            "size": { "value": 3, "random": true, "anim": { "enable": false, "speed": 40, "size_min": 0.1, "sync": false } },
+            "line_linked": { "enable": true, "distance": 150, "color": "#007bff", "opacity": 0.4, "width": 1 },
+            "move": { "enable": true, "speed": 3, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } }
+          },
+          "interactivity": {
+            "detect_on": "canvas",
+            "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+            "modes": { "grab": { "distance": 400, "line_linked": { "opacity": 1 } }, "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 }, "repulse": { "distance": 100, "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": { "particles_nb": 2 } }
+          },
+          "retina_detect": true
+        });
+      }
 
 
-					<div id="page-2" class="page two">
-						<h2 class="heading">Skills</h2>
-						<!-- Skill Section -->
-						<div class="row mb-4 ftco-animate">
-							<div class="col grow"><img class="img-fluid" src="images/skills/javascript.png"	title="JavaScript"></div>
-							<div class="col grow"><img class="img-fluid" src="images/skills/node.png" title="NodeJS"></div>
-							<div class="col grow"><img class="img-fluid" src="images/skills/react.png" title="React"></div>
-							<div class="col grow"><img class="img-fluid" src="images/skills/python.png" title="Python"></div>
+      // Skill Bar Animation on Scroll
+      const skillItems = document.querySelectorAll('.skill-item');
+      const animateSkills = () => {
+        skillItems.forEach(item => {
+          const skillProgress = item.querySelector('.skill-progress');
+          const rect = item.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom >= 0 && !skillProgress.style.width) { // Animate only once
+            const width = skillProgress.getAttribute('data-width');
+            skillProgress.style.width = width;
+          }
+        });
+      };
+      window.addEventListener('scroll', animateSkills);
+      animateSkills(); // Initial check in case skills are already in view
 
-						</div>
-						<div class="row mb-4 ftco-animate">
-							<div class="col grow"><img class="img-fluid" src="images/skills/cplusplus.png" title="C++"></div>
-							<div class="col grow"><img class="img-fluid" src="images/skills/c.png" title="C"></div>
-							<div class="col grow"><img class="img-fluid" src="images/skills/css.png" title="CSS"></div>
-							<div class="col grow"><img class="img-fluid" src="images/skills/java.png" title="Java"></div>
+      // Footer Current Year
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-						</div>
-						<div class="row mb-4 ftco-animate">
-							<div class="col grow"><img class="img-fluid" src="images/skills/html.png" title="HTML"></div>
-							<div class="col grow"><img class="img-fluid" src="images/skills/mongo.png" title="Mongo DB"></div>
-							<div class="col grow"><img class="img-fluid" src="images/skills/django.png" title="Django"></div>
-							<div class="col grow"><img class="img-fluid" src="images/skills/spring.png" title="Springboot"></div>
+      // Smooth scrolling for nav links
+        const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                let targetId = this.getAttribute('href');
+                // Special case for back-to-top on home link
+                if (targetId === "#home" && this.closest('.back-to-top')) {
+                     window.scrollTo({ top: 0, behavior: 'smooth' });
+                     return;
+                }
+                let targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    let offset = navbar.offsetHeight;
+                    if (targetId === "#home") offset = 0; // No offset for home
+                    let elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    let offsetPosition = elementPosition - offset;
 
-						</div>
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
 
-	</section>
-	<section class="ftco-section" id="project-section">
-		<div class="container-fluid px-md-5">
-			<div class="row justify-content-center py-5 mt-5">
-				<div class="col-md-12 heading-section text-center ftco-animate">
-					<h2 class="mb-4">Projects</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 text-center d-flex ftco-animate">
-					<a class="services-1 shadow">
-						<span class="icon">
-							<i class="icon-traffic"></i>
-						</span>
-						<div class="desc">
-							<h3 class="mb-4">Traffic Sign Detection using YOLOv8 for Advanced driver
-								assistance system.
-								</h3>
-							<p><strong>object detection model • convolutional neural networks</strong></p>
-							<p>The project aimed to develop a robust traffic sign detection system to
-								enhance the capabilities of an Advanced Driver Assistance System (ADAS)
-								for improved road safety and autonomous driving.</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 text-center d-flex mx-auto ftco-animate">
-					<a href="" target="_blank" class="services-1 shadow">
-						<span class="icon">
-							<i class="icon-bus"></i>
-						</span>
-						<div class="desc">
-							<h3 class="mb-4">Know your bus (Web development project)
-							</h3>
-							<p><strong>HTML • CSS • Php • MySql</strong></p>
-							<p>A simple web development project that aims on providing the details of
-								the next arriving bus when provided with a bus stop and time.</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 text-center d-flex mx-auto ftco-animate">
-					<a href="o" target="_blank" class="services-1 shadow">
-						<span class="icon">
-							<i class="icon-bitcoin"></i>
-						</span>
-						<div class="desc">
-							<h3 class="mb-4">On-chain analysis-based detection of abnormal transaction amount on cryptocurrency exchanges
-							</h3>
-							<p><strong>On Chain analysis • Rnn </strong></p>
-							<p>Led development of advanced anomaly detection system for cryptocurrency exchanges, leveraging LSTM with
-								attention mechanism for on-chain analysis. Achieved detection of abnormal transaction amounts, enhancing
-								exchange security and risk management.</p>
-						</div>
-					</a>
-				</div>
-			</div>
-
-			</div>
-		</div>
-		</div>
-		
-		<section id="resume-section" class="ftco-section">
-			<div class="container">
-
-			  <div class="row justify-content-center">
-				<div class="col-md-8 heading-section text-center">
-					<h2 class="mb-4">Resume</h2>
-				  
-				  <!-- Option 1: Embed PDF using <embed> tag -->
-				  <embed src="Rahul.pdf" type="application/pdf" width="100%" height="1050px" />
-
-				  <p class="mt-4"><a href="Rahul.pdf" target="_blank" class="btn btn-primary">Download Resume</a></p>
-				</div>
-			  </div>
-			</div>
-		  </section>
-	</section>
-	<footer class="ftco-footer ftco-section" id="footer-section">
-		<div class="container">
-			<div class="row mb-5">
-				<div class="col-md">
-					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">About</h2>
-						<p>I like working with new tools and technologies</p>
-						<p class="mt-4"><u>Social Links</u></p>
-						<ul class="ftco-footer-social list-unstyled float-md-left float-lft">
-							<li class="ftco-animate"><a href="https://github.com/RahulShridhar10" target="_blank"><span
-										class="icon-github"></span></a></li>
-							<li class="ftco-animate"><a href="http://www.linkedin.com/in/rahul-shridhar-664742269"
-									target="_blank"><span class="icon-linkedin-square"></span></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md">
-					<div class="ftco-footer-widget mb-4 ml-md-4">
-						<h2 class="ftco-heading-2">Links</h2>
-						<ul class="list-unstyled">
-							<li><a href="#home-section"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
-							<li><a href="#about-section"><span class="icon-long-arrow-right mr-2"></span>About</a>
-							</li>
-							<li><a href="#project-section"><span class="icon-long-arrow-right mr-2"></span>Projects</a>
-							</li>
-							<li><a href="#contact-section"><span class="icon-long-arrow-right mr-2"></span>Contact</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="col-md">
-					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">Have a Question?</h2>
-						<div class="block-23 mb-3">
-							<ul>
-								<li><a href=""><span
-											class="icon icon-envelope"></span><span
-											class="text">rahulshridhar44@gmail.com</span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 text-center">
-
-					<p class="mt-20">Copyright &copy;
-						<script>document.write(new Date().getFullYear());</script>
-					</p>
-				</div>
-			</div>
-		</div>
-	</footer>
+                    // Close mobile navbar if open
+                    const navbarToggler = document.querySelector('.navbar-toggler');
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarToggler && navbarCollapse.classList.contains('show')) {
+                        navbarToggler.click();
+                    }
+                }
+            });
+        });
 
 
+        // Active link highlighting on scroll
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', navHighlighter);
 
-	<!-- loader -->
-	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-				stroke="#F96D00" />
-		</svg></div>
+        function navHighlighter() {
+            let scrollY = window.pageYOffset;
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop - navbar.offsetHeight - 50; // Adjusted offset
+                let sectionId = current.getAttribute('id');
+
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelector('.nav-link[href*=' + sectionId + ']').classList.add('active');
+                } else {
+                    document.querySelector('.nav-link[href*=' + sectionId + ']').classList.remove('active');
+                }
+            });
+             // Special case for home link when at the very top
+            if (scrollY < sections[0].offsetTop - navbar.offsetHeight - 50) {
+                document.querySelector('.nav-link[href="#home"]').classList.add('active');
+            }
+        }
+        navHighlighter(); // Call on load
 
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.stellar.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/jquery.animateNumber.min.js"></script>
-	<script src="js/scrollax.min.js"></script>
-	<script src="js/particles.min.js"></script>
-	<script src="js/app.js"></script>
-	<script src="js/main.js"></script>
+        // Contact Form Submission (Basic Example)
+        const contactForm = document.getElementById('contactForm');
 
+		if (contactForm) {
+			contactForm.addEventListener('submit', function(e) {
+				e.preventDefault(); // Prevent the default form submission
+
+				const formData = new FormData(contactForm);
+				const submitButton = contactForm.querySelector('button[type="submit"]');
+				const originalButtonText = submitButton.innerHTML;
+
+				// Change button text to indicate processing
+				submitButton.disabled = true;
+				submitButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+
+				fetch("https://formspree.io/f/meogvwro", { // contactForm.action should be your Formspree endpoint
+					method: 'POST',
+					body: formData,
+					headers: {
+						'Accept': 'application/json' // Important for Formspree to return JSON
+					}
+				})
+				.then(response => {
+					if (response.ok) { // Check if response status is 2xx
+						return response.json(); // Parse JSON response from Formspree
+					}
+					// If response not OK, try to parse error or throw generic error
+					return response.json().then(errorData => {
+						throw new Error(errorData.error || 'Something went wrong. Please try again.');
+					});
+				})
+				.then(data => {
+					// Formspree success response typically includes an "ok: true"
+					if (data.ok) {
+						// Display a success message to the user
+						// You can replace this with a more sophisticated notification
+						alert("Message sent successfully! Thank you for reaching out.");
+						contactForm.reset(); // Clear the form fields
+					} else {
+						// This case might be hit if Formspree returns a 200 OK but with an internal error
+						throw new Error(data.error || 'Failed to send message. Please try again.');
+					}
+				})
+				.catch(error => {
+					console.error("Form submission error:", error);
+					// Display an error message to the user
+					alert(`Error: ${error.message}`);
+				})
+				.finally(() => {
+					// Restore button text and enable it
+					submitButton.disabled = false;
+					submitButton.innerHTML = originalButtonText;
+				});
+			});
+		}
+
+    });
+  </script>
 </body>
-
 </html>
